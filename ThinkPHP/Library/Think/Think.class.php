@@ -262,6 +262,7 @@ class Think {
     // 致命错误捕获
     static public function fatalError() {
         Log::save();
+        Log::storageRequestLog();
         if ($e = error_get_last()) {
             switch($e['type']){
               case E_ERROR:

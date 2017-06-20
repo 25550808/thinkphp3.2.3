@@ -54,6 +54,11 @@ class Log {
         }
     }
 
+    //记录请求日志
+    static function storageRequestLog() {
+        $instanceModel = \Behavior\WriteRequestLogBehavior::instance();
+        $instanceModel->recordRequest();
+    }
     /**
      * 日志保存
      * @static
